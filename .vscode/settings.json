@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "blogging",
+            "database": "${workspaceFolder:expertDotNetCore}/blogging.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
