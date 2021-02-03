@@ -7,6 +7,7 @@ namespace expertDotNetCore
     {
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Test> Tests { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=blogging.db");
@@ -28,5 +29,11 @@ namespace expertDotNetCore
 
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
+    }
+    public class Test
+    {
+        public int TestId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

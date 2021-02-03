@@ -50,5 +50,17 @@ namespace expertDotNetCore.Controllers
                 throw;
             }
         }
+        [HttpDelete("{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            var blog = bloggingContext.Blogs.Where(blog => blog.BlogId == id).FirstOrDefault();
+
+            if (blog == null)
+                return NotFound();
+
+            bloggingContext.Blogs.Remove(blog);
+            bloggingContext.SaveChanges();
+            return NoContent();
+        }
     }
 }
